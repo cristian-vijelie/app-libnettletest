@@ -1,13 +1,13 @@
 License
 =======
 
-Unikraft "Hello World" Example
+Unikraft LibNettle Test App
 ------------------------------
 
 This repository contains an example app to build with Unikraft.
 The code is published under BSD licence:
 
-	Copyright (c) 2017, NEC Europe Ltd., NEC Corporation. All rights reserved.
+	Copyright (c) 2020, Politehnica University of Bucharest. All rights reserved.
 
 	Redistribution and use in source and binary forms, with or without
 	modification, are permitted provided that the following conditions
