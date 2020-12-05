@@ -1,3 +1,5 @@
+#ifndef APP_LIBNETTLETEST_TESTSUITE_H
+#define APP_LIBNETTLETEST_TESTSUITE_H
 void test_main_aes(void);
 void test_main_arcfour(void);
 void test_main_arctwo(void);	
