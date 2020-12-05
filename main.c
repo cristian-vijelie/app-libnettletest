@@ -11,7 +11,7 @@ int main()
 	printf("\t\tBUFFER, CAMELLIA, CAST128, CBC, CCM, CFM, CHACHA, POLY1305, CMAC, CTR, DES, DES3, EAX, GCM, GOSTHASH94\n");
 	printf("\t[2]\tHKDF, HMAC, KNUTH, MD2, MD4, MD5\n");
 	printf("\t[3]\tPBKDF2, RIPEMD160, SALSA20, SERPENT\n");
-	printf("\t[4]\tSHA1\n");
+	printf("\t[4]\tSHA1 - WILL TAKE A LONG TIME\n");
 	printf("\t[5]\tSHA3-224\n");
 	printf("\t[6]\tSHA3-256\n");
 	printf("\t[7]\tSHA3-384\n");
