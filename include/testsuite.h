@@ -56,3 +56,4 @@ void test_main_twofish(void);
 void test_main_umac(void);
 void test_main_xts(void);
 void test_main_yarrow(void);
+#endif /* APP_LIBNETTLETEST_TESTSUITE_H */
