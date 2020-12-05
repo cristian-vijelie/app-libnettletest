@@ -3,6 +3,9 @@
 This application tests the correct functioning of the nettle cryptographic
 library.
 
+The application requires newlib and nettle to work. Also, the LIBNETTLE_TEST
+option should be selected for nettle in menuconfig.
+
 You should configure UK_ROOT and UK_LIBS, in Makefile, acording to your setup.
 
 Known issues:
