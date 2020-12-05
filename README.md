@@ -13,4 +13,4 @@ Known issues:
     are made so unikraft won't crash.
 *   9pfs is required to run for the yarrow test, as it reads the golden-bug.txt
     file (build/libnettle/origin/nettle-3.6/testsuite) - currently not working 
-    at all.
+    at all. But yarrow should work properly, even though the test fails to run.
