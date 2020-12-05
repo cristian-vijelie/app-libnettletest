@@ -6,6 +6,7 @@ int main()
 	int tests_nr = -1;
 
 	printf("\nSelect test suite: [1..11]\n");
+	printf("\t[0]\tALL\n");
 	printf("\t[1]\tMETA AEAD, META ARMOR, META CIPHERS, META HASH, META MAC, AES, ARCTWO, ARCFOUR, BASE16, BASE64, BLOWFISH,\n");
 	printf("\t\tBUFFER, CAMELLIA, CAST128, CBC, CCM, CFM, CHACHA, POLY1305, CMAC, CTR, DES, DES3, EAX, GCM, GOSTHASH94\n");
 	printf("\t[2]\tHKDF, HMAC, KNUTH, MD2, MD4, MD5\n");
@@ -20,7 +21,7 @@ int main()
 	printf("\t[11]\tXTS, YARROW\n");
 	scanf("%d", &tests_nr);
 
-	if (tests_nr == 1)
+	if (tests_nr == 1 || tests_nr == 0)
 	{
 		printf("Testing META AEAD...\n");
 		test_main_meta_aead();
@@ -130,7 +131,7 @@ int main()
 		test_main_gosthash94();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 2)
+	else if (tests_nr == 2 || tests_nr == 0)
 	{
 		printf("Testing HKDF...\n");
 		test_main_hkdf();
@@ -160,7 +161,7 @@ int main()
 		test_main_md5();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 3)
+	else if (tests_nr == 3 || tests_nr == 0)
 	{
 		printf("Testing PBKDF2...\n");
 		test_main_pbkdf2();
@@ -178,7 +179,7 @@ int main()
 		test_main_serpent();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 4)
+	else if (tests_nr == 4 || tests_nr == 0)
 	{
 		printf("Testing SHA1...\n");
 		test_main_sha1();
@@ -188,37 +189,37 @@ int main()
 		test_main_sha1_huge();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 5)
+	else if (tests_nr == 5 || tests_nr == 0)
 	{
 		printf("Testing SHA3-224...\n");
 		test_main_sha3_224();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 6)
+	else if (tests_nr == 6 || tests_nr == 0)
 	{
 		printf("Testing SHA3 256...\n");
 		test_main_sha3_256();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 7)
+	else if (tests_nr == 7 || tests_nr == 0)
 	{
 		printf("Testing SHA3-384...\n");
 		test_main_sha3_384();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 8)
+	else if (tests_nr == 8 || tests_nr == 0)
 	{
 		printf("Testing SHA3-512...\n");
 		test_main_sha3_512();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 9)
+	else if (tests_nr == 9 || tests_nr == 0)
 	{
 		printf("Testing SHA3 PERMUTE...\n");
 		test_main_sha3_permute();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 10)
+	else if (tests_nr == 10 || tests_nr == 0)
 	{
 		printf("Testing SHA224...\n");
 		test_main_sha224();
@@ -256,7 +257,7 @@ int main()
 		test_main_umac();
 		printf("PASSED\n");
 	}
-	else if (tests_nr == 11)
+	else if (tests_nr == 11 || tests_nr == 0)
 	{
 		printf("Testing XTS...\n");
 		test_main_xts();
