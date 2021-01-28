@@ -12,8 +12,8 @@ Due to some keyboard intrerrupt issues, to select the test suite number, you
 must replace the -1 in guest_fs/test_nr with the desired test suite number.
 Leaving the -1 will display only the test suites and their contents.
 
-To run with kvm: the following parameters must be given to qemu:\
-*   -fsdev local,id=myid,path=guest_fs,security_model=none \
+To run with kvm: the following parameters must be given to qemu:
+*   -fsdev local,id=myid,path=guest_fs,security_model=none
 *   -device virtio-9p-pci,fsdev=myid,mount_tag=rootfs,disable-modern=on,disable-legacy=off
 
 Known issues:
