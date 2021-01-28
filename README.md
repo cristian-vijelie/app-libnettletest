@@ -8,9 +8,16 @@ option should be selected for nettle in menuconfig.
 
 You should configure UK_ROOT and UK_LIBS, in Makefile, acording to your setup.
 
+Due to some keyboard intrerrupt issues, to select the test suite number, you
+must replace the -1 in guest_fs/test_nr with the desired test suite number.
+Leaving the -1 will display only the test suites and their contents.
+
+To run with kvm: the following parameters must be given to qemu:
+*   -fsdev local,id=myid,path=guest_fs,security_model=none
+*   -device virtio-9p-pci,fsdev=myid,mount_tag=rootfs,disable-modern=on,
+disable-legacy=off
+
 Known issues:
 *   On linuxu platform, test suite 0 will make unikraft crash. Test suites
     are made so unikraft won't crash.
-*   9pfs is required to run for the yarrow test, as it reads the golden-bug.txt
-    file (build/libnettle/origin/nettle-3.6/testsuite) - currently not working 
-    at all. But yarrow should work properly, even though the test fails to run.
+*   Not tested on Xen.
