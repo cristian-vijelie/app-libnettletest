@@ -3,29 +3,46 @@
 
 int main()
 {
-	int tests_nr = -1;
-	FILE * infile;
+	int tests_nr = -1, ret;
+	FILE *infile;
 
 	infile = fopen("test_nr", "r");
+	if (infile == NULL)
+	{
+		printf("ERROR: test_nr could not be opened!\n");
+		exit(1);
+	}
 
-	printf("\nSelect test suite: [1..11]\n");
-	printf("\t[0]\tALL\n");
-	printf("\t[1]\tMETA AEAD, META ARMOR, META CIPHERS, META HASH, META MAC, AES, ARCTWO, ARCFOUR, BASE16, BASE64, BLOWFISH,\n");
-	printf("\t\tBUFFER, CAMELLIA, CAST128, CBC, CCM, CFM, CHACHA, POLY1305, CMAC, CTR, DES, DES3, EAX, GCM, GOSTHASH94\n");
-	printf("\t[2]\tHKDF, HMAC, KNUTH, MD2, MD4, MD5\n");
-	printf("\t[3]\tPBKDF2, RIPEMD160, SALSA20, SERPENT\n");
-	printf("\t[4]\tSHA1 - WILL TAKE A LONG TIME\n");
-	printf("\t[5]\tSHA3-224\n");
-	printf("\t[6]\tSHA3-256\n");
-	printf("\t[7]\tSHA3-384\n");
-	printf("\t[8]\tSHA3-512\n");
-	printf("\t[9]\tSHA3 PERMUTE\n");
-	printf("\t[10]\tSHA224, SHA256, SHA384, SHA512, SHA512-224, SHA512-256, SHAKE256, TWOFISH, UMAC\n");
-	printf("\t[11]\tXTS, YARROW\n");
+	ret = fscanf(infile, "%d", &tests_nr);
+	if (ret == 0)
+	{
+		printf("ERROR: file test_nr should not be empty!\n");
+		exit(1);
+	}
+	
+	fclose(infile);
 
-	sleep(5);
+	if (tests_nr == -1)
+	{
+		printf("\nSelect test suite: [1..11]\n");
+		printf("\t[0]\tALL\n");
+		printf("\t[1]\tMETA AEAD, META ARMOR, META CIPHERS, META HASH, META MAC, AES, ARCTWO, ARCFOUR, BASE16, BASE64, BLOWFISH,\n");
+		printf("\t\tBUFFER, CAMELLIA, CAST128, CBC, CCM, CFM, CHACHA, POLY1305, CMAC, CTR, DES, DES3, EAX, GCM, GOSTHASH94\n");
+		printf("\t[2]\tHKDF, HMAC, KNUTH, MD2, MD4, MD5\n");
+		printf("\t[3]\tPBKDF2, RIPEMD160, SALSA20, SERPENT\n");
+		printf("\t[4]\tSHA1 - WILL TAKE A LONG TIME\n");
+		printf("\t[5]\tSHA3-224\n");
+		printf("\t[6]\tSHA3-256\n");
+		printf("\t[7]\tSHA3-384\n");
+		printf("\t[8]\tSHA3-512\n");
+		printf("\t[9]\tSHA3 PERMUTE\n");
+		printf("\t[10]\tSHA224, SHA256, SHA384, SHA512, SHA512-224, SHA512-256, SHAKE256, TWOFISH, UMAC\n");
+		printf("\t[11]\tXTS, YARROW\n");
 
-	fscanf(infile, "%d", &tests_nr);
+		sleep(20);
+
+		return 0;
+	}
 
 	if (tests_nr == 1 || tests_nr == 0)
 	{
@@ -192,7 +209,7 @@ int main()
 		printf("PASSED\n");
 
 		printf("Testing SHA1 HUGE...\n");
-		// test_main_sha1_huge();
+		test_main_sha1_huge();
 		printf("PASSED\n");
 	}
 	if (tests_nr == 5 || tests_nr == 0)
@@ -274,12 +291,8 @@ int main()
 		printf("PASSED\n");
 	}
 
-	if (tests_nr == -1)
-		sleep(15);
-	else {
-		sleep(5);
-		printf("All tests passed\n");
-	}
+	printf("All tests passed\n");
+	sleep(5);
 
 	return 0;
 }
